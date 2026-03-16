@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tianyi Zhang</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.7;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .header-text h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .header-text p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .links a {
+            color: #222;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            margin-right: 18px;
+            font-size: 0.9rem;
+        }
+
+        .links a:hover {
+            border-bottom-color: #222;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #888;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .about p, .experience p {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .edu-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .edu-item span {
+            color: #888;
+        }
+
+        .company-block {
+            margin-bottom: 24px;
+        }
+
+        .company-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .company-block ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .company-block li {
+            font-size: 0.92rem;
+            color: #333;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .company-block li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #bbb;
+        }
+
+        .company-block li > ul {
+            margin-top: 6px;
+            padding-left: 0;
+        }
+
+        .company-block li > ul li {
+            padding-left: 16px;
+            font-size: 0.88rem;
+            color: #555;
+        }
+
+        .company-block li > ul li::before {
+            content: "·";
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 60px;
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 500px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .links {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+            }
+            .links a {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="avatar.jpg" alt="Tianyi Zhang" class="avatar">
+        <div class="header-text">
+            <h1>Tianyi Zhang</h1>
+            <p>SF Bay Area</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/tyzhangucb/" target="_blank">LinkedIn</a>
+                <a href="https://x.com/mycharmspace" target="_blank">X</a>
+                <a href="https://grokipedia.com/page/Zhang_Tianyi" target="_blank">Grokipedia</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2>About</h2>
+        <p>
+            I'm a Member of Technical Staff on the Reasoning team at xAI, where I lead search and factuality post-training for the Grok model family - powering real-time capabilities of Grok.
+            Previously I spent five years at Apple as a ML Engineering Manager in search and language modeling, and before that I was an Applied Scientist at Uber building fraud detection systems and a data scientist at LeanTaaS building scheduling systems.
+        </p>
+    </section>
+
+    <section class="experience">
+        <h2>What I Do</h2>
+
+        <div class="company-block">
+            <div class="company-name">xAI</div>
+            <ul>
+                <li><strong>Grok 4.20:</strong>
+                    <ul>
+                        <li>Led Grok 4.20 instant mode post-training, as well as search &amp; factuality post-training for multi-agents.</li>
+                        <li>Grok 4.20 beta-1 ranked #1 in Search Arena upon launch and achieved the lowest hallucination rate in the AA Omni-Science benchmark.</li>
+                    </ul>
+                </li>
+                <li><strong>Grok 4.1 &amp; Fast:</strong>
+                    <ul>
+                        <li>Led search &amp; factuality post-training, reducing hallucinations by 70% in instant mode.</li>
+                        <li>Grok 4.1 Fast non-reasoning with agentic search powers Grok in Tesla, helping users seek information and navigate in seconds.</li>
+                    </ul>
+                </li>
+                <li><strong>Grok 4 Fast:</strong>
+                    <ul>
+                        <li>Led large-scale search RL and SFT.</li>
+                        <li>Grok 4 Fast (Menlo) ranked #1 in Search Arena upon launch and achieved Pareto-frontier intelligence.</li>
+                    </ul>
+                </li>
+                <li><strong>Grok 4:</strong>
+                    <ul>
+                        <li>Core contributor to Grok 4.</li>
+                        <li>Contributed the first set of synthetic data that makes agentic search work.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="company-block">
+            <div class="company-name">Apple</div>
+            <ul>
+                <li>Trained sub-15ms efficient language models that correct spelling, auto-complete, and query understanding for 1 billion users across various apps.</li>
+            </ul>
+        </div>
+
+        <div class="company-block">
+            <div class="company-name">Uber</div>
+            <ul>
+                <li>Built real-time ML systems that cut fraud losses by 60+% at a third of the action rate.</li>
+            </ul>
+        </div>
+
+        <div class="company-block">
+            <div class="company-name">LeanTaaS</div>
+            <ul>
+                <li>Built the optimization algorithm for scheduling and wait-time optimization serving the top 20 hospitals in the United States, cutting wait times by 30% during peak hours.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="edu-item">M.A. Statistics, UC Berkeley</div>
+        <div class="edu-item">B.S. Mathematics &amp; Statistics, Purdue University</div>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <p style="font-size: 0.95rem; color: #333;">tyzhang at berkeley dot edu</p>
+    </section>
+
+    <footer>
+        &copy; 2026 Tianyi Zhang
+    </footer>
+</body>
+</html>
