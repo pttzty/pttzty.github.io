@@ -1,0 +1,122 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.25in,bottom=0.3in,left=0.5in,right=0.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Custom itemize for resume bullet points (hollow circle)
+\newlist{rbullets}{itemize}{1}
+\setlist[rbullets]{
+  label=$\circ$,
+  leftmargin=25pt,
+  labelsep=5pt,
+  itemsep=0.5pt,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt,
+}
+
+% Section header with underline
+\newcommand{\ress}[1]{%
+  \vspace{6pt}%
+  {\large\scshape #1}\par
+  \vspace{3pt}%
+  \hrule height 0.4pt%
+  \vspace{4pt}%
+}
+
+\begin{document}
+
+%========== HEADER ==========%
+\noindent
+{\Large\bfseries Tianyi Zhang} \hfill Email: tyzhang@berkeley.edu \\
+https://www.linkedin.com/in/tyzhangucb \hfill Mobile: +1-765-637-6774 \\
+https://pttzty.github.io
+
+\vspace{3pt}
+
+%========== EDUCATION ==========%
+\ress{Education}
+
+\noindent\textbf{University of California, Berkeley} \hfill \textbf{Berkeley, CA}\\
+\hspace*{10pt}{\small\textit{Master in Statistics} \hfill \textit{2015 - 2016}}\\
+\hspace*{10pt}{\small\textbf{GPA:4.0/4.0, Rank: 1/32}}
+
+\vspace{6pt}
+
+\noindent\textbf{Purdue University} \hfill \textbf{West Lafayette, IN}\\
+\hspace*{10pt}{\small\textit{B.S. in Mathematics, B.S. in Statistics} \hfill \textit{2012 - 2015}}\\
+\hspace*{10pt}{\small\textbf{GPA:3.99/4.0, Rank: Top 1\%, Highest Distinction, Minor: Economics, Management}}
+
+%========== EXPERIENCE ==========%
+\ress{Experience}
+
+%--- xAI ---
+\noindent\textbf{xAI} \hfill \textbf{Palo Alto, CA}\\
+\hspace*{10pt}{\small\textit{Member of Technical Staff - Post Training} \hfill \textit{May 2025 - Present}}\\
+\vspace{-10pt}
+\begin{rbullets}\small
+\item Core contributor to Grok 4, Grok 4 Fast, Grok 4.1, Grok 4.1 Fast, Grok 4.2, and Grok 4.3.
+\item I lead Grok search post-training team, covering Deep Search with long reasoning/tool use, multi-agent post-training, and fast mode with minimal reasoning and tool-use. I also captain the post-train RL run for fast mode of Grok 4.2 and Grok 4.3.
+\item Lead search post-training/distillation for Grok models with hybrid reasoning/non-reasoning model achieving SOTA search benchmarks and \#1 on LM Search Arena (Grok 4.2 and Grok 4 Fast) upon release.
+\item Lead factuality training for Grok 4.1/4.1 Fast, developed \& pioneered agentic grading recipe that reduced factual hallucinations by 70\% for instant-mode info-seeking prompts.
+\item Developed scalable synthetic QA pipelines for RLVR that boosted Grok 4 Browsecomp from 10\% to 40+\%, Grok 4.2 Multi-Agent to 80\%+.
+\item Developed rubric generation pipeline for deep research open-ended questions improving Grok-4 10\%+ improvements on internal expert bench.
+\item Developed Synthetic RL data/Internal benchmarks for X searches and toolsets making Grok best to browse X.
+\item Developed and optimize tools for search \& browsing in production and RL training, including search snippet generation model, web page browsing tools, engineering optimizations of caching and speculative browsing of pages to reduce latency.
+\end{rbullets}
+
+%--- Apple ---
+\noindent\textbf{Apple} \hfill \textbf{Cupertino, CA}\\
+\hspace*{10pt}{\small\textit{Sr Engineering Manager - ML, Siri and Search} \hfill \textit{Dec 2019 - May 2025}}\\
+\vspace{-10pt}
+\begin{rbullets}\small
+\item Lead the team developing completion, spell corrections, QU for spotlight/Safari/Siri Search, as well as build technologies to power those in Apple Music, Appstore, Apple TV products for most of Apple search traffic.
+\item Tech lead for personal question answering and follow-up questions gen powering Apple Intelligence.
+\item Developed production spell-correction services with LMs, user log mininig, and fuzzy inverted-index matching.
+\item Built low-latency NLP models powering joint auto-complete and keyboard corrections for 20+ languages spotlight/safari suggestions powering billions of searches weekly. Performed denoising target pre-training from scratch with usage data.
+\item Lead Siri ASR server post corrections with language model rewriting, N-best rescoring models, and phonetic fuzzy matchings through phonetic embeddings to resolve ASR errors.
+\item Developed the whole stack of search relevance retrieval and ranking models for Maps domain in Siri requests
+\end{rbullets}
+
+%--- Uber ---
+\noindent\textbf{Uber Technologies} \hfill \textbf{San Francisco, CA}\\
+\hspace*{10pt}{\small\textit{Applied Scientist} \hfill \textit{July 2017 - Dec 2019}}\\
+\vspace{-10pt}
+\begin{rbullets}\small
+\item I built most of the real-time and offline ML systems in Uber Risk team with two other co-workers which cut the company's financial fraud loss by 60\% with only a third of action rate compared to when I joined.
+\item Built chargeback fraud, abuse prevention, and auto-refreshing ML systems across payment add/trip request/login flows.
+\item Within 2.5 years, I helped transforming Uber Risk from having a human-rule dominated system into an auto-updated ML-dominated system
+\end{rbullets}
+
+%--- LeanTaaS ---
+\noindent\textbf{LeanTaaS Inc (Series D SaaS Healthcare AI company)} \hfill \textbf{Santa Clara, CA}\\
+\hspace*{10pt}{\small\textit{Research Scientist} \hfill \textit{June 2016 - July 2017}}\\
+\vspace{-10pt}
+\begin{rbullets}\small
+\item As one of the earliest data scientist, I (together with 2 researchers) designed and developed the scheduling optimization algorithms currently powering the company's core product - IQueue
+\item Complex operational constraint-based integer programming optimizing cancer center schedules at 50+ top US hospitals
+\item Built non-homogeneous simulation algorithms for queuing models and staffing optimization tools for Emory University Cancer Lab and MD Anderson, and decreased the average lab patient wait time by 30 mins.
+\end{rbullets}
+
+%--- Tencent ---
+\noindent\textbf{Tencent Inc} \hfill \textbf{Shenzhen, China}\\
+\hspace*{10pt}{\small\textit{Summer Strategy Intern} \hfill \textit{Summer 2015}}
+
+\vspace{2pt}
+
+%--- Alipay ---
+\noindent\textbf{Alipay Co., Ltd (Ant Financial), Alibaba Group} \hfill \textbf{Hangzhou, China}\\
+\hspace*{10pt}{\small\textit{ML Intern, Business Intelligence} \hfill \textit{Summer 2014}}
+
+%========== SKILLS SUMMARY ==========%
+\ress{Skills Summary}
+
+\noindent\small\textbullet\hspace{8pt}Skills: Machine Learning, NLP, Statistics, LLM Post-training, Agent RL, Synthetic Data
+
+\end{document}
