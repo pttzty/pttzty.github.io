@@ -7,16 +7,11 @@
     <style>
         :root {
             --bg: #f7f6f3;
-            --surface: #ffffff;
             --text: #1a1a1a;
-            --text-secondary: #5c5c5c;
+            --text-secondary: #4a4a4a;
             --text-muted: #8a8a8a;
-            --border: #e8e6e1;
-            --border-strong: #d4d1ca;
-            --accent: #2c2c2c;
+            --rule: #e4e1db;
             --link: #1a1a1a;
-            --radius: 12px;
-            --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04);
         }
 
         * {
@@ -40,89 +35,74 @@
         }
 
         .page {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 64px 24px 80px;
+            padding: 72px 28px 80px;
         }
 
         /* —— Header —— */
         header {
             display: flex;
             align-items: center;
-            gap: 28px;
-            margin-bottom: 48px;
-            padding: 28px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: calc(var(--radius) + 4px);
-            box-shadow: var(--shadow);
+            gap: 24px;
+            padding-bottom: 36px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--rule);
         }
 
         .avatar {
-            width: 112px;
-            height: 112px;
+            width: 96px;
+            height: 96px;
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
-            border: 3px solid var(--surface);
-            box-shadow:
-                0 0 0 1px var(--border-strong),
-                0 4px 12px rgba(0, 0, 0, 0.08);
+            background: #1c1c1c;
         }
 
         .header-text h1 {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: 1.65rem;
+            font-size: 1.7rem;
             font-weight: 650;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
             margin-bottom: 4px;
-            color: var(--text);
         }
 
         .header-text > p {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--text-muted);
             font-size: 0.9rem;
-            font-weight: 450;
-            margin-bottom: 14px;
-            letter-spacing: 0.01em;
+            margin-bottom: 12px;
         }
 
         .links {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            align-items: center;
+            gap: 6px 16px;
         }
 
         .links a {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--link);
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.84rem;
             font-weight: 500;
-            letter-spacing: 0.01em;
-            padding: 5px 11px;
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            background: var(--bg);
-            transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+            text-underline-offset: 3px;
         }
 
         .links a:hover {
-            background: var(--text);
-            border-color: var(--text);
-            color: #fff;
+            text-decoration: underline;
+        }
+
+        .links a:focus-visible {
+            outline: 2px solid var(--text);
+            outline-offset: 3px;
         }
 
         /* —— Sections —— */
         section {
-            margin-bottom: 36px;
-            padding: 28px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: calc(var(--radius) + 4px);
-            box-shadow: var(--shadow);
+            margin-bottom: 40px;
         }
 
         h2 {
@@ -132,17 +112,13 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--text-muted);
-            margin-bottom: 18px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 14px;
         }
 
         .about p,
-        .experience p,
-        .contact p {
-            font-size: 1.02rem;
+        .experience p {
+            font-size: 1.04rem;
             color: var(--text-secondary);
-            margin-bottom: 0;
         }
 
         .about p + p {
@@ -150,34 +126,16 @@
         }
 
         /* —— Experience —— */
-        .company-block {
-            margin-bottom: 26px;
-        }
-
-        .company-block:last-child {
-            margin-bottom: 0;
+        .company-block + .company-block {
+            margin-top: 28px;
         }
 
         .company-name {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             font-size: 0.95rem;
             font-weight: 650;
-            color: var(--text);
             letter-spacing: -0.01em;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .company-name::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--text-muted);
-            flex-shrink: 0;
-            opacity: 0.7;
+            margin-bottom: 8px;
         }
 
         .company-block ul {
@@ -189,139 +147,137 @@
         .company-block > ul > li {
             font-size: 0.98rem;
             color: var(--text-secondary);
-            padding-left: 16px;
-            position: relative;
-            margin-bottom: 10px;
             line-height: 1.65;
         }
 
-        .company-block > ul > li:last-child {
-            margin-bottom: 0;
-        }
-
-        .company-block > ul > li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.72em;
-            width: 6px;
-            height: 1px;
-            background: var(--border-strong);
+        .company-block > ul > li + li {
+            margin-top: 14px;
         }
 
         .company-block li strong {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             font-weight: 600;
             color: var(--text);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .company-block > ul > li:has(> ul) > strong {
+            display: block;
+            margin-bottom: 6px;
         }
 
         .company-block li > ul {
-            margin-top: 8px;
-            padding-left: 0;
-            border-left: 1.5px solid var(--border);
-            margin-left: 2px;
-            padding-left: 14px;
+            margin-top: 2px;
         }
 
         .company-block li > ul li {
-            padding-left: 0;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            margin-bottom: 6px;
             line-height: 1.6;
+            padding-left: 14px;
             position: relative;
         }
 
-        .company-block li > ul li:last-child {
-            margin-bottom: 0;
+        .company-block li > ul li + li {
+            margin-top: 5px;
         }
 
         .company-block li > ul li::before {
-            display: none;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.72em;
+            width: 5px;
+            height: 1px;
+            background: #c8c4bb;
         }
 
-        /* —— Education —— */
+        /* —— Education / Contact —— */
+        .edu-list {
+            display: table;
+            border-collapse: collapse;
+        }
+
         .edu-item {
+            display: table-row;
             font-size: 0.98rem;
             color: var(--text-secondary);
-            margin-bottom: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 6px 10px;
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
-        .edu-item:last-child {
-            margin-bottom: 0;
+        .edu-item + .edu-item .edu-degree,
+        .edu-item + .edu-item .edu-year {
+            padding-top: 8px;
         }
 
-        .edu-item span {
+        .edu-degree {
+            display: table-cell;
+        }
+
+        .edu-year {
+            display: table-cell;
+            padding-left: 2.25em;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 450;
+            white-space: nowrap;
+            text-align: right;
+            vertical-align: baseline;
         }
 
-        /* —— Contact —— */
         .contact p {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             font-size: 0.95rem;
             color: var(--text-secondary);
-            letter-spacing: 0.01em;
         }
 
         /* —— Footer —— */
         footer {
             margin-top: 8px;
-            padding: 0 4px;
             color: var(--text-muted);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 0.01em;
+            font-size: 0.78rem;
             text-align: center;
         }
 
         /* —— Responsive —— */
-        @media (max-width: 540px) {
+        @media (max-width: 600px) {
             .page {
-                padding: 28px 16px 48px;
+                padding: 36px 20px 56px;
             }
 
             header {
                 flex-direction: column;
                 text-align: center;
-                gap: 18px;
-                padding: 24px 20px;
-            }
-
-            .header-text > p {
-                margin-bottom: 12px;
+                gap: 16px;
+                padding-bottom: 28px;
+                margin-bottom: 32px;
             }
 
             .links {
                 justify-content: center;
             }
 
-            section {
-                padding: 22px 18px;
-                margin-bottom: 16px;
+            .edu-list,
+            .edu-item,
+            .edu-degree,
+            .edu-year {
+                display: block;
             }
 
-            .company-name {
-                justify-content: flex-start;
+            .edu-item + .edu-item {
+                margin-top: 12px;
             }
 
-            .edu-item {
-                flex-direction: column;
-                gap: 2px;
+            .edu-item + .edu-item .edu-degree,
+            .edu-item + .edu-item .edu-year {
+                padding-top: 0;
             }
-        }
 
-        @media (prefers-reduced-motion: reduce) {
-            .links a {
-                transition: none;
+            .edu-year {
+                padding-left: 0;
+                text-align: left;
             }
         }
     </style>
@@ -351,7 +307,7 @@
         </section>
 
         <section class="experience">
-            <h2>What I Do</h2>
+            <h2>Experience</h2>
 
             <div class="company-block">
                 <div class="company-name">Google DeepMind</div>
@@ -363,13 +319,17 @@
             <div class="company-block">
                 <div class="company-name">xAI</div>
                 <ul>
+                    <li><strong>Grok 4.5:</strong>
+                        <ul>
+                            <li>Large scale search &amp; factuality data generation for SFT/Mid-training.</li>
+                        </ul>
+                    </li>
                     <li><strong>Grok 4.20 / Grok 4.3:</strong>
                         <ul>
                             <li>Led Grok 4.20 / Grok 4.3 instant/minimal-reasoning mode post-training.</li>
                             <li>Led search &amp; factuality post-training for multi-agents.</li>
                             <li>Grok 4.20 (Arastradero) beta-1 ranked #1 in Search Arena upon launch.</li>
                             <li>Grok 4.20 / Grok 4.3 reduced 80%+ factual errors from Grok 4 Fast when both equipped with browsing and search tools.</li>
-                            <li>Grok 4.5 large scale search &amp; factuality data generation for SFT/Mid-training.</li>
                         </ul>
                     </li>
                     <li><strong>Grok 4.1 &amp; Fast:</strong>
@@ -417,8 +377,10 @@
 
         <section>
             <h2>Education</h2>
-            <div class="edu-item">M.A. Statistics, UC Berkeley <span>&middot; 2015&ndash;2016</span></div>
-            <div class="edu-item">B.S. Mathematics &amp; Statistics, Purdue University <span>&middot; 2012&ndash;2015</span></div>
+            <div class="edu-list">
+                <div class="edu-item"><span class="edu-degree">M.A. Statistics, UC Berkeley</span> <span class="edu-year">2015&ndash;2016</span></div>
+                <div class="edu-item"><span class="edu-degree">B.S. Mathematics &amp; Statistics, Purdue University</span> <span class="edu-year">2012&ndash;2015</span></div>
+            </div>
         </section>
 
         <section class="contact">
